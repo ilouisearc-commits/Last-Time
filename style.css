@@ -1,0 +1,966 @@
+/* =========================================
+   THE LAST FRAME
+   COMPLETE STYLE — RESET VERSION
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Mono:wght@300;400&display=swap');
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: #11100f;
+    color: #e8e1d8;
+    font-family: "Cormorant Garamond", serif;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   PAGE SYSTEM
+========================================= */
+
+.page {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    display: none;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    padding-bottom: 80px;
+
+    scrollbar-width: thin;
+    scrollbar-color: #665d53 transparent;
+}
+
+.page.active {
+    display: block;
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+.page::-webkit-scrollbar {
+    width: 6px;
+}
+
+.page::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.page::-webkit-scrollbar-thumb {
+    background: #665d53;
+    border-radius: 20px;
+}
+
+
+/* =========================================
+   COVER
+========================================= */
+
+#cover {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    overflow: hidden;
+
+    display: none;
+
+    padding: 0;
+}
+
+#cover.active {
+    display: block;
+}
+
+
+/* =========================================
+   COVER — PHOTOS
+========================================= */
+
+.photo-frame {
+    position: absolute;
+
+    background: #e8e1d8;
+    padding: 10px;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.45),
+        0 4px 12px rgba(0, 0, 0, 0.3);
+
+    z-index: 1;
+}
+
+.photo-placeholder {
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+    background: #24211e;
+}
+
+.photo-placeholder img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* BACK PHOTO */
+
+.frame-back {
+    width: 205px;
+    height: 265px;
+
+    left: 8%;
+    top: 12%;
+
+    transform: rotate(-7deg);
+}
+
+
+/* FRONT PHOTO */
+
+.frame-front {
+    width: 225px;
+    height: 285px;
+
+    right: 9%;
+    top: 10%;
+
+    transform: rotate(6deg);
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   FILM STRIPS
+========================================= */
+
+.film-strip {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+
+    z-index: 0;
+
+    opacity: 0.35;
+}
+
+.film-strip span {
+    width: 30px;
+    height: 18px;
+
+    border: 1px solid #8b8175;
+
+    position: relative;
+}
+
+.film-strip span::before,
+.film-strip span::after {
+    content: "";
+
+    position: absolute;
+
+    width: 4px;
+    height: 5px;
+
+    background: #8b8175;
+
+    top: 5px;
+}
+
+.film-strip span::before {
+    left: -8px;
+}
+
+.film-strip span::after {
+    right: -8px;
+}
+
+.film-left {
+    left: 4%;
+    bottom: 13%;
+    transform: rotate(-8deg);
+}
+
+.film-right {
+    right: 4%;
+    bottom: 15%;
+    transform: rotate(8deg);
+}
+
+
+/* =========================================
+   FILM GRAIN
+========================================= */
+
+.film-grain {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.06;
+
+    background-image:
+        radial-gradient(
+            rgba(255,255,255,0.5) 1px,
+            transparent 1px
+        );
+
+    background-size: 4px 4px;
+
+    z-index: 3;
+}
+
+
+/* =========================================
+   CAMERA MARK
+========================================= */
+
+.camera-mark {
+    position: absolute;
+
+    top: 7%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+
+    color: #8d8378;
+
+    z-index: 5;
+}
+
+
+/* =========================================
+   COVER TEXT
+========================================= */
+
+.eyebrow {
+    position: absolute;
+
+    top: 39%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 100%;
+
+    text-align: center;
+
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+
+    letter-spacing: 0.25em;
+
+    color: #8f8579;
+
+    z-index: 10;
+}
+
+#cover h1 {
+    position: absolute;
+
+    top: 43%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+
+    text-align: center;
+
+    font-size: clamp(42px, 6vw, 76px);
+    font-weight: 400;
+
+    line-height: 0.95;
+
+    letter-spacing: -0.03em;
+
+    z-index: 10;
+}
+
+.name {
+    position: absolute;
+
+    top: 53%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 100%;
+
+    text-align: center;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 0.12em;
+
+    color: #a49a8f;
+
+    z-index: 10;
+}
+
+.divider {
+    position: absolute;
+
+    top: 55%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 70px;
+
+    height: 1px;
+
+    background: #665d53;
+
+    z-index: 10;
+}
+
+.opening-text {
+    position: absolute;
+
+    top: 58%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(520px, 80%);
+
+    text-align: center;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    color: #c4bbb1;
+
+    z-index: 10;
+}
+
+
+/* =========================================
+   DEVELOP BUTTON
+========================================= */
+
+.enter-button {
+    position: absolute;
+
+    top: 73%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 13px 30px;
+
+    background: transparent;
+
+    border: 1px solid #756b61;
+
+    color: #e8e1d8;
+
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+
+    letter-spacing: 0.2em;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+
+    z-index: 20;
+}
+
+.enter-button:hover {
+    background: #e8e1d8;
+    color: #11100f;
+
+    transform: translateX(-50%) translateY(-2px);
+}
+
+.bottom-note {
+    position: absolute;
+
+    bottom: 5%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 100%;
+
+    text-align: center;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 0.08em;
+
+    color: #665d53;
+
+    z-index: 10;
+}
+
+
+/* =========================================
+   MENU
+========================================= */
+
+.menu-page {
+    min-height: 100%;
+    padding: 10vh 8vw 100px;
+
+    text-align: center;
+}
+
+.section-number {
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 0.2em;
+
+    color: #746a60;
+
+    margin-bottom: 20px;
+}
+
+.menu-page h2 {
+    font-size: clamp(42px, 6vw, 70px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    margin-bottom: 18px;
+}
+
+.menu-intro {
+    max-width: 500px;
+
+    margin: 0 auto 55px;
+
+    font-size: 17px;
+
+    line-height: 1.5;
+
+    color: #a9a096;
+}
+
+
+/* =========================================
+   DOORS
+========================================= */
+
+.door-grid {
+    width: min(850px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+.door {
+    min-height: 170px;
+
+    position: relative;
+
+    padding: 30px;
+
+    background: #171614;
+
+    border: 1px solid #38332f;
+
+    color: #e8e1d8;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.door:hover {
+    background: #1e1b18;
+
+    border-color: #756b61;
+
+    transform: translateY(-3px);
+}
+
+.door:nth-child(5) {
+    grid-column: 1 / -1;
+
+    width: 50%;
+
+    justify-self: center;
+}
+
+.door-number {
+    display: block;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    color: #756b61;
+
+    margin-bottom: 45px;
+}
+
+.door-title {
+    display: block;
+
+    font-size: 26px;
+
+    font-weight: 400;
+}
+
+.door-arrow {
+    position: absolute;
+
+    right: 22px;
+    bottom: 20px;
+
+    font-size: 20px;
+
+    color: #756b61;
+}
+
+
+/* =========================================
+   MEMORY PAGES
+========================================= */
+
+.memory-page {
+    min-height: 100%;
+
+    padding:
+        10vh
+        9vw
+        120px;
+}
+
+.memory-number {
+    display: block;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 0.2em;
+
+    color: #756b61;
+
+    margin-bottom: 45px;
+}
+
+.memory-top {
+    max-width: 900px;
+
+    margin-bottom: 55px;
+}
+
+.frame-label {
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 0.2em;
+
+    color: #756b61;
+
+    margin-bottom: 16px;
+}
+
+.memory-page h2 {
+    max-width: 800px;
+
+    font-size: clamp(40px, 5vw, 68px);
+
+    line-height: 0.98;
+
+    font-weight: 400;
+}
+
+
+/* =========================================
+   MEMORY CONTENT
+========================================= */
+
+.memory-layout {
+    width: min(1050px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: minmax(280px, 0.9fr) minmax(280px, 1fr);
+
+    gap: clamp(40px, 8vw, 110px);
+
+    align-items: center;
+}
+
+.memory-layout.reverse {
+    grid-template-columns: minmax(280px, 1fr) minmax(280px, 0.9fr);
+}
+
+.memory-layout.reverse .memory-photo {
+    order: 2;
+}
+
+.memory-layout.reverse .memory-text {
+    order: 1;
+}
+
+
+/* =========================================
+   MEMORY PHOTO
+========================================= */
+
+.memory-photo {
+    width: 100%;
+
+    max-width: 330px;
+
+    aspect-ratio: 4 / 5;
+
+    padding: 12px;
+
+    background: #e8e1d8;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.4);
+
+    justify-self: center;
+}
+
+.memory-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================================
+   MEMORY TEXT
+========================================= */
+
+.memory-text {
+    max-width: 520px;
+}
+
+.memory-text p,
+.note-content p {
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #c3bbb2;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   FINAL NOTE
+========================================= */
+
+.final-note {
+    padding-bottom: 140px;
+}
+
+.note-content {
+    max-width: 650px;
+
+    margin: 55px auto 0;
+}
+
+.closing-line {
+    margin-top: 45px;
+
+    font-style: italic;
+
+    font-size: 22px !important;
+
+    color: #e8e1d8 !important;
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back-button {
+    display: block;
+
+    position: relative;
+
+    z-index: 50;
+
+    margin: 70px auto 0;
+
+    padding: 12px 20px;
+
+    background: transparent;
+
+    border: none;
+
+    color: #8f8579;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 0.12em;
+
+    cursor: pointer;
+
+    transition: color 0.25s ease;
+}
+
+.back-button:hover {
+    color: #e8e1d8;
+}
+
+
+/* =========================================
+   RESPONSIVE — TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+    .frame-back {
+        width: 155px;
+        height: 205px;
+
+        left: 5%;
+        top: 9%;
+    }
+
+    .frame-front {
+        width: 170px;
+        height: 220px;
+
+        right: 5%;
+        top: 8%;
+    }
+
+    .eyebrow {
+        top: 34%;
+    }
+
+    #cover h1 {
+        top: 38%;
+    }
+
+    .name {
+        top: 47%;
+    }
+
+    .divider {
+        top: 51%;
+    }
+
+    .opening-text {
+        top: 54%;
+    }
+
+    .enter-button {
+        top: 70%;
+    }
+
+    .door-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .door:nth-child(5) {
+        width: 100%;
+    }
+
+    .memory-layout,
+    .memory-layout.reverse {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .memory-layout.reverse .memory-photo,
+    .memory-layout.reverse .memory-text {
+        order: initial;
+    }
+
+    .memory-photo {
+        width: min(100%, 420px);
+    }
+
+    .memory-text {
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE — PHONE
+========================================= */
+
+@media (max-width: 550px) {
+
+    .page {
+        padding-bottom: 100px;
+    }
+
+    .menu-page {
+        padding:
+            8vh
+            6vw
+            100px;
+    }
+
+    .memory-page {
+        padding:
+            8vh
+            6vw
+            120px;
+    }
+
+    .frame-back {
+        width: 125px;
+        height: 165px;
+
+        left: 3%;
+        top: 8%;
+    }
+
+    .frame-front {
+        width: 140px;
+        height: 180px;
+
+        right: 3%;
+        top: 7%;
+    }
+
+    .eyebrow {
+        top: 31%;
+
+        font-size: 8px;
+    }
+
+    #cover h1 {
+        top: 35%;
+
+        font-size: 43px;
+    }
+
+    .name {
+        top: 44%;
+
+        font-size: 9px;
+    }
+
+    .divider {
+        top: 48%;
+    }
+
+    .opening-text {
+        top: 51%;
+
+        width: 86%;
+
+        font-size: 14px;
+    }
+
+    .enter-button {
+        top: 68%;
+    }
+
+    .bottom-note {
+        bottom: 4%;
+
+        font-size: 8px;
+    }
+
+    .menu-page h2 {
+        font-size: 48px;
+    }
+
+    .door {
+        min-height: 145px;
+    }
+
+    .door-title {
+        font-size: 23px;
+    }
+
+    .memory-page h2 {
+        font-size: 42px;
+    }
+
+    .memory-text p,
+    .note-content p {
+        font-size: 17px;
+    }
+
+    .back-button {
+        margin-top: 60px;
+        margin-bottom: 30px;
+    }
+}

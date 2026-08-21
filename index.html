@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Last Frame</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         COVER
+    ========================== -->
+
+    <main class="page active" id="cover">
+
+        <!-- BIG PHOTO 01 -->
+        <div class="photo-frame frame-back">
+            <div class="photo-placeholder">
+                <img src="images/foto1.jpeg" alt="A memory">
+            </div>
+        </div>
+
+        <!-- BIG PHOTO 02 -->
+        <div class="photo-frame frame-front">
+            <div class="photo-placeholder">
+                <img src="images/foto7.jpeg" alt="Our last frame">
+            </div>
+        </div>
+
+        <!-- FILM STRIPS -->
+
+        <div class="film-strip film-left">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="film-strip film-right">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="film-grain"></div>
+
+        <div class="camera-mark">
+            <span>●</span>
+        </div>
+
+        <p class="eyebrow">
+            A LITTLE ARCHIVE FOR
+        </p>
+
+        <h1>
+            The Last Frame
+        </h1>
+
+        <p class="name">
+            Hakim Aryadikara
+        </p>
+
+        <div class="divider"></div>
+
+        <p class="opening-text">
+            Some moments are meant to be temporary.<br>
+            Not because they matter any less,<br>
+            but because that's what makes them worth remembering.
+        </p>
+
+        <button class="enter-button" onclick="showPage('menu')">
+            DEVELOP
+        </button>
+
+        <p class="bottom-note">
+            one little archive from the days we shared
+        </p>
+
+    </main>
+
+
+    <!-- =========================
+         MENU / FIVE DOORS
+    ========================== -->
+
+    <section class="page menu-page" id="menu">
+
+        <p class="section-number">01</p>
+
+        <h2>A Few Frames</h2>
+
+        <p class="menu-intro">
+            Five little pieces from the days we shared.
+        </p>
+
+        <div class="door-grid">
+
+            <button class="door" onclick="showPage('first-shot')">
+                <span class="door-number">01</span>
+                <span class="door-title">The First Shot</span>
+                <span class="door-arrow">↗</span>
+            </button>
+
+            <button class="door" onclick="showPage('somewhere')">
+                <span class="door-number">02</span>
+                <span class="door-title">Somewhere Between</span>
+                <span class="door-arrow">↗</span>
+            </button>
+
+            <button class="door" onclick="showPage('little-things')">
+                <span class="door-number">03</span>
+                <span class="door-title">Little Things</span>
+                <span class="door-arrow">↗</span>
+            </button>
+
+            <button class="door" onclick="showPage('favorite-shot')">
+                <span class="door-number">04</span>
+                <span class="door-title">My Favorite Shot</span>
+                <span class="door-arrow">↗</span>
+            </button>
+
+            <button class="door" onclick="showPage('note')">
+                <span class="door-number">05</span>
+                <span class="door-title">A Little Note</span>
+                <span class="door-arrow">↗</span>
+            </button>
+
+        </div>
+
+        <button class="back-button" onclick="showPage('cover')">
+            ← back
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         01 THE FIRST SHOT
+    ========================== -->
+
+    <section class="page memory-page" id="first-shot">
+
+        <span class="memory-number">01 / 05</span>
+
+        <div class="memory-top">
+
+            <p class="frame-label">
+                THE FIRST SHOT
+            </p>
+
+            <h2>
+                The beginning, quite naturally.
+            </h2>
+
+        </div>
+
+        <div class="memory-layout">
+
+            <div class="memory-photo">
+                <img src="images/foto8.jpeg" alt="The First Shot">
+            </div>
+
+            <div class="memory-text">
+
+                <p>
+                    I think what first caught my attention was your intro.
+                    It felt like we might actually match, and somehow,
+                    talking to you just flowed.
+                </p>
+
+                <p>
+                    From films to random campus complaints, we somehow
+                    managed to talk about everything without it ever
+                    feeling forced.
+                </p>
+
+            </div>
+
+        </div>
+
+        <button class="back-button" onclick="showPage('menu')">
+            ← back to frames
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         02 SOMEWHERE BETWEEN
+    ========================== -->
+
+    <section class="page memory-page" id="somewhere">
+
+        <span class="memory-number">02 / 05</span>
+
+        <div class="memory-top">
+
+            <p class="frame-label">
+                SOMEWHERE BETWEEN
+            </p>
+
+            <h2>
+                Somewhere between teasing and blushing.
+            </h2>
+
+        </div>
+
+        <div class="memory-layout reverse">
+
+            <div class="memory-photo">
+
+                <img
+                    src="images/foto9.jpeg"
+                    alt="Somewhere Between"
+                >
+
+            </div>
+
+            <div class="memory-text">
+
+                <p>
+                    You had this habit of calling me cute,
+                    and somehow, I was always a little too easy
+                    to make flustered.
+                </p>
+
+                <p>
+                    Then came the little “kakak” calls,
+                    which somehow made the conversations
+                    even sweeter.
+                </p>
+
+                <p>
+                    And yes, you called me pretty too.
+                    I definitely remembered that one.
+                </p>
+
+            </div>
+
+        </div>
+
+        <button class="back-button" onclick="showPage('menu')">
+            ← back to frames
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         03 LITTLE THINGS
+    ========================== -->
+
+    <section class="page memory-page" id="little-things">
+
+        <span class="memory-number">03 / 05</span>
+
+        <div class="memory-top">
+
+            <p class="frame-label">
+                LITTLE THINGS
+            </p>
+
+            <h2>
+                You made the quiet moments feel less quiet.
+            </h2>
+
+        </div>
+
+        <div class="memory-layout">
+
+            <div class="memory-photo">
+
+                <img
+                    src="images/foto10.jpeg"
+                    alt="Little Things"
+                >
+
+            </div>
+
+            <div class="memory-text">
+
+                <p>
+                    You are the kind of person who pays attention
+                    to little things.
+                </p>
+
+                <p>
+                    And whenever I got excited about something,
+                    you somehow got excited with me.
+                    Somehow, I never felt like I was talking alone.
+                </p>
+
+            </div>
+
+        </div>
+
+        <button class="back-button" onclick="showPage('menu')">
+            ← back to frames
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         04 MY FAVORITE SHOT
+    ========================== -->
+
+    <section class="page memory-page" id="favorite-shot">
+
+        <span class="memory-number">04 / 05</span>
+
+        <div class="memory-top">
+
+            <p class="frame-label">
+                MY FAVORITE SHOT
+            </p>
+
+            <h2>
+                Stories traded back and forth.
+            </h2>
+
+        </div>
+
+        <div class="memory-layout reverse">
+
+            <!-- NO PHOTO FOR THIS FRAME -->
+
+            <div class="memory-text full-memory-text">
+
+                <p>
+                    Maybe this one is my favorite.
+                </p>
+
+                <p>
+                    Trading stories, trading complaints,
+                    trading film titles — little pieces of our days
+                    passing between two people who had only just met.
+                </p>
+
+                <p>
+                    Somehow, those simple exchanges became
+                    some of the moments I wanted to keep.
+                </p>
+
+            </div>
+
+        </div>
+
+        <button class="back-button" onclick="showPage('menu')">
+            ← back to frames
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         05 FINAL NOTE
+    ========================== -->
+
+    <section class="page memory-page final-note" id="note">
+
+        <span class="memory-number">05 / 05</span>
+
+        <p class="frame-label">
+            A LITTLE NOTE
+        </p>
+
+        <h2>
+            Before the last frame.
+        </h2>
+
+        <div class="note-content">
+
+            <p>
+                Thank you for being my chat companion for these
+                past few days.
+            </p>
+
+            <p>
+                Thank you for listening to all my little complaints,
+                random stories, and everything in between.
+                I am genuinely glad I got to know you.
+            </p>
+
+            <p>
+                I hope somehow, somewhere, our paths cross again.
+                Until then, take care of yourself, okay?
+                Keep going, stay healthy, and please —
+                eat something good every day.
+            </p>
+
+            <p class="closing-line">
+                Until another frame finds us.
+            </p>
+
+        </div>
+
+        <button class="back-button" onclick="showPage('menu')">
+            ← back to frames
+        </button>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
